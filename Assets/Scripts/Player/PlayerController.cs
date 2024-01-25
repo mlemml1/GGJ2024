@@ -6,16 +6,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public DialogBox m_dialog;
+
     private CharacterController m_controller;
     private Vector3 m_velocity;
+    public Vector3 Velocity => m_velocity;
+
     private Vector3 m_faceDir = Vector3.forward;
-    private const float maxSpeed = 15.0f;
+    public const float maxSpeed = 15.0f;
 
     void Start()
     {
         m_controller = GetComponent<CharacterController>();
-
-
     }
 
     void Update()
@@ -27,7 +28,9 @@ public class PlayerController : MonoBehaviour
     {
         // Disable all movement while in dialog.
         if (m_dialog.Active)
+        {
             return;
+        }
 
         float horz = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical") * 1.5f;
@@ -39,8 +42,10 @@ public class PlayerController : MonoBehaviour
         if (speed > maxSpeed)
             speed = maxSpeed;
 
+        m_velocity *= speed;
+
         //Debug.Log($"speed {speed}");
-        m_controller.SimpleMove(m_velocity * speed);
+        m_controller.SimpleMove(m_velocity);
 
         if (speed > 0.5f)
             m_faceDir = m_velocity;

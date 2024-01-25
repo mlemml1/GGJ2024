@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 7953961633170036138}
   - component: {fileID: 1002984775999787577}
   - component: {fileID: 8220632051239134519}
+  - component: {fileID: 1121926795107589188}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -208,8 +209,8 @@ Transform:
   m_GameObject: {fileID: 6815418352730350941}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 1.243, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 458979910373406960}
@@ -255,12 +256,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 486823989, guid: 463f7a1a87c6d2b469211efe91cc4735, type: 3}
+  m_Sprite: {fileID: -550092356, guid: 1e85802dfb7b53244b3e5f3794291a1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 1.28}
+  m_Size: {x: 2.56, y: 6.144}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -276,7 +277,7 @@ Animator:
   m_GameObject: {fileID: 6815418352730350941}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3fffe41b7ce2cf84abdfe41d5bbf34fc, type: 2}
+  m_Controller: {fileID: 9100000, guid: 57a9b104f1761844dbe4252285563453, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -300,6 +301,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_shadowMaterial: {fileID: 2100000, guid: cc741fff2a456fe4d839b37053d1efaf, type: 2}
+--- !u!114 &1121926795107589188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6815418352730350941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63f0bf010e82dc144bb0b837c9b12c0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_controller: {fileID: 4713091086824055571}
 --- !u!1001 &4482033217126200845
 PrefabInstance:
   m_ObjectHideFlags: 0
