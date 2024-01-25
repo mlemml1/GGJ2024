@@ -10,18 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a4a75762ec241a47978f56547e826be, type: 3}
-  m_Name: TestDialog
+  m_Name: TestDialog2
   m_EditorClassIdentifier: 
-  dialogText: 'Hey!
-
-    I''m a test NPC!
-
-
-    Two newlines form new dialog boxes!'
-  dialogResponses:
-  - text: Cool!
-    next: {fileID: 0}
-    nextParam: 
-  - text: Idgaf
-    next: {fileID: 11400000, guid: 995b9881471d32a409ec407a127f5112, type: 2}
-    nextParam: 
+  dialogText: Well that's mean!
+  dialogResponses: []

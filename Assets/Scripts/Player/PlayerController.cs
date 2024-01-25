@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    public DialogBox m_dialog;
     private CharacterController m_controller;
     private Vector3 m_velocity;
     private Vector3 m_faceDir = Vector3.forward;
@@ -24,6 +25,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Disable all movement while in dialog.
+        if (m_dialog.Active)
+            return;
+
         float horz = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical") * 1.5f;
 
@@ -94,14 +99,30 @@ public class PlayerController : MonoBehaviour
 
     void InteractCheck()
     {
+        bool interact = Input.GetButtonDown("Interact");
+        
+        // Look for grabbable items.
+
         // Look for something interactable.
 
 
-        // Look for talkative NPCs.
-        var npc = FindUsable<DialogTrigger>();
-        if (npc != null)
+        // Look for talkative dialog/NPCs.
+        var dialog = FindUsable<DialogTrigger>();
+        if (dialog != null)
         {
             // interact hint.
+            if (interact)
+            {
+                StartDialog(dialog.m_tree);
+            }
         }
+    }
+
+    void StartDialog(DialogTree tree)
+    {
+        if (m_dialog.Active)
+            return;
+
+        StartCoroutine(m_dialog.ShowDialog(tree));
     }
 }
