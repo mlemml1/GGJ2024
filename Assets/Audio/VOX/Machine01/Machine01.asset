@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a4a75762ec241a47978f56547e826be, type: 3}
-  m_Name: TestDialog2
+  m_Script: {fileID: 11500000, guid: b578cbfa056d7174a90f4b166c8126f7, type: 3}
+  m_Name: Machine01
   m_EditorClassIdentifier: 
-  dialogText: Well that's mean!
-  vox: {fileID: 11400000, guid: 0421f8357633c8f47bb4f73785c8d4b8, type: 2}
-  dialogResponses: []
+  voxSfx: {fileID: 8300000, guid: a5d532146c693ac43935555852919dcc, type: 3}
+  warbleScale: 0.013

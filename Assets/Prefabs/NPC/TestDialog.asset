@@ -18,6 +18,7 @@ MonoBehaviour:
 
 
     Two newlines form new dialog boxes!'
+  vox: {fileID: 11400000, guid: d7e26fdba371107468fbefee07b9340b, type: 2}
   dialogResponses:
   - text: Cool!
     next: {fileID: 0}

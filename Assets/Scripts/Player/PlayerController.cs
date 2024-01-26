@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 Velocity => m_velocity;
 
     private Vector3 m_faceDir = Vector3.forward;
-    public const float maxSpeed = 15.0f;
+    public const float maxSpeed = 10.0f;
 
     void Start()
     {

@@ -16,5 +16,6 @@ public class DialogTree : ScriptableObject
     [Multiline]
     public string dialogText;
 
+    public SpeechDef vox;
     public List<DialogOption> dialogResponses;
 }

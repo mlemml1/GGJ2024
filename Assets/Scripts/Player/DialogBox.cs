@@ -4,11 +4,12 @@ using System.Text;
 using TMPro;
 using UnityEngine;
 
-
+[RequireComponent(typeof(AudioSource))]
 public class DialogBox : MonoBehaviour
 {
     public GameObject m_box;
     public TextMeshProUGUI m_text;
+    private AudioSource m_audio;
 
     public bool Active
     {
@@ -19,6 +20,7 @@ public class DialogBox : MonoBehaviour
     void Start()
     {
         Active = false;
+        m_audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -28,11 +30,9 @@ public class DialogBox : MonoBehaviour
 
     public IEnumerator ShowDialog(DialogTree tree)
     {
-        Debug.Log("pre show");
         if (Active)
             yield break;
 
-        Debug.Log("start show");
         m_text.text = "";
         Active = true;
 
@@ -42,6 +42,10 @@ public class DialogBox : MonoBehaviour
         // Split into dialogs.
         var dialogs = tree.dialogText.Split("\n\n");
 
+        float lastSpeechTime = 0;
+        //float speechRate = tree.vox?.voxSfx?.length ?? 0;
+        float speechRate = 0.1f;
+
         foreach (var str in dialogs)
         {
             // Draw the text.
@@ -50,7 +54,17 @@ public class DialogBox : MonoBehaviour
             {
                 builder.Append(str[i]);
                 m_text.text = builder.ToString();
-                yield return new WaitForSeconds(0.05f);
+
+                // play clip.
+                if (tree.vox != null && (Time.time - lastSpeechTime) > speechRate)
+                {
+                    m_audio.pitch = Random.Range(1.0f - tree.vox.warbleScale, 1.0f + tree.vox.warbleScale);
+                    m_audio.PlayOneShot(tree.vox.voxSfx);
+                    lastSpeechTime = Time.time;
+                }
+
+                // speed things up if the user is spamming.
+                yield return new WaitForSeconds(Input.GetButton("Interact") ? 0.01f : 0.03f);
             }
 
 
