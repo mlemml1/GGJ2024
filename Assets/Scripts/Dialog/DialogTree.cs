@@ -6,8 +6,9 @@ using UnityEngine;
 public struct DialogOption
 {
     public string text;
-    public Object next;
-    public string nextParam;
+    public DialogTree next;
+    public string message;
+    public string messageParam;
 }
 
 [CreateAssetMenu(fileName = "Dialog", menuName = "GGJ/DialogTree", order = 1)]

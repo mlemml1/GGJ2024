@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Current { get; private set; }
+
     public DialogBox m_dialog;
 
     private CharacterController m_controller;
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Current = this;
         m_controller = GetComponent<CharacterController>();
     }
 
@@ -118,16 +121,16 @@ public class PlayerController : MonoBehaviour
             // interact hint.
             if (interact)
             {
-                StartDialog(dialog.m_tree);
+                StartDialog(dialog.m_tree, dialog.m_target);
             }
         }
     }
 
-    void StartDialog(DialogTree tree)
+    void StartDialog(DialogTree tree, GameObject target)
     {
         if (m_dialog.Active)
             return;
 
-        StartCoroutine(m_dialog.ShowDialog(tree));
+        StartCoroutine(m_dialog.ShowDialog(tree, target));
     }
 }
