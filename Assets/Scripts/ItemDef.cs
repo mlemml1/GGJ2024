@@ -2,17 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemDef : MonoBehaviour
+[CreateAssetMenu(fileName = "Item", menuName = "GGJ/ItemDef", order = 4)]
+public class ItemDef : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string itemName;
+    public GameObject prefab;
 }
