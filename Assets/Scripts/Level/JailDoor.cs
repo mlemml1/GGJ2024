@@ -5,14 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class JailDoor : MonoBehaviour
 {
+    public Transform m_hinge;
     public DialogTree m_callDialog;
     public DialogTree m_guardDialog;
     public DialogTree m_pickupDialog;
+    public DialogTree m_unlockDialog;
     public DialogTrigger m_trigger;
     public Pacer m_guard;
     private bool m_isWalking = false;
     public AudioClip m_laughErupt;
     private AudioSource m_audio;
+    public GameObject m_keys;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +62,35 @@ public class JailDoor : MonoBehaviour
 
         yield return new WaitForSeconds(m_laughErupt.length);
 
+        m_keys.SetActive(true);
         m_audio.Play();
+    }
+
+    public void PickupKeys()
+    {
+        m_keys.SetActive(false);
+        m_trigger.m_tree = m_unlockDialog;
+    }
+
+    public void Unlock()
+    {
+        m_trigger.m_tree = null;
+        StartCoroutine(UnlockRoutine());
+    }
+
+    private IEnumerator UnlockRoutine()
+    {
+        Vector3 angle = m_hinge.transform.rotation.eulerAngles;
+        Vector3 targetAngle = angle + new Vector3(0, 90, 0);
+
+        const int numSteps = 100;
+
+        for (int i = 0; i < numSteps; i++)
+        {
+            float along = ((float)i / (float)numSteps);
+            var rot = Vector3.Lerp(angle, targetAngle, along);
+            m_hinge.transform.rotation = Quaternion.Euler(rot);
+            yield return null;
+        }
     }
 }

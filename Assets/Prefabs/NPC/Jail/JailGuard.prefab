@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2060949504153444564}
   - component: {fileID: 1740727684077356579}
+  - component: {fileID: 7608283668123690046}
+  - component: {fileID: 1522505875482159548}
   m_Layer: 0
   m_Name: JailGuard
   m_TagString: Untagged
@@ -49,6 +51,41 @@ MonoBehaviour:
   m_patrolPos1: {fileID: 0}
   m_patrolPos2: {fileID: 0}
   m_paceTime: 0.8
+--- !u!65 &7608283668123690046
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163841846825437807}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 3.44, z: 2}
+  m_Center: {x: 0, y: 1.79, z: 0}
+--- !u!114 &1522505875482159548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163841846825437807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f867ed681686db0468da311f274c4e87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_tree: {fileID: 11400000, guid: 380938d60962b634aae20693daa53572, type: 2}
+  m_target: {fileID: 0}
 --- !u!1 &8818347220006519138
 GameObject:
   m_ObjectHideFlags: 0
