@@ -30,7 +30,7 @@ public class DialogBox : MonoBehaviour
         
     }
 
-    private void UpdateResponses(List<DialogOption> options)
+    private void UpdateResponses(string pretext, List<DialogOption> options)
     {
         if (m_selectionIndex < 0)
             m_selectionIndex = options.Count - 1;
@@ -39,6 +39,9 @@ public class DialogBox : MonoBehaviour
             m_selectionIndex = 0;
 
         StringBuilder sb = new();
+
+        if (!string.IsNullOrEmpty(pretext))
+            sb.AppendLine(pretext);
 
         for (int i = 0; i < options.Count; i++)
         {
@@ -53,12 +56,20 @@ public class DialogBox : MonoBehaviour
         m_text.text = sb.ToString();
     }
 
+    private bool FindFlag(string flag, ref string str)
+    {
+        bool hasAny = str.Contains(flag);
+        str = str.Replace(flag, "");
+        return hasAny;
+    }
+
     public IEnumerator ShowDialog(DialogTree tree, GameObject target)
     {
         if (Active)
             yield break;
 
         m_text.text = "";
+        m_text.verticalAlignment = VerticalAlignmentOptions.Top;
         m_selectionIndex = 0;
         Active = true;
 
@@ -76,15 +87,22 @@ public class DialogBox : MonoBehaviour
 
             foreach (var str in dialogs)
             {
+                var finalStr = str.Replace("\\n", "\n");
+
+                // Hack. Too bad!
+                bool isNarration = FindFlag("\\t", ref finalStr);
+
+                m_text.verticalAlignment = isNarration ? VerticalAlignmentOptions.Middle : VerticalAlignmentOptions.Top;
+
                 // Draw the text.
                 StringBuilder builder = new();
-                for (int i = 0; i < str.Length; i++)
+                for (int i = 0; i < finalStr.Length; i++)
                 {
-                    builder.Append(str[i]);
+                    builder.Append(finalStr[i]);
                     m_text.text = builder.ToString();
 
                     // play clip.
-                    if (tree.vox != null && (Time.time - lastSpeechTime) > speechRate)
+                    if (!isNarration && tree.vox != null && (Time.time - lastSpeechTime) > speechRate)
                     {
                         m_audio.pitch = Random.Range(1.0f - tree.vox.warbleScale, 1.0f + tree.vox.warbleScale);
                         m_audio.PlayOneShot(tree.vox.voxSfx);
@@ -117,7 +135,7 @@ public class DialogBox : MonoBehaviour
             yield return null;
 
             // Setup UI options if we have them.
-            UpdateResponses(responses);
+            UpdateResponses(tree.responseText, responses);
 
             // Hacky loop, runs once per frame to check input.
             while (true)
@@ -126,13 +144,13 @@ public class DialogBox : MonoBehaviour
                 {
                     // Select previous.
                     m_selectionIndex--;
-                    UpdateResponses(responses);
+                    UpdateResponses(tree.responseText, responses);
                 }
                 else if (Input.GetButtonDown("MenuNext"))
                 {
                     // Select next.
                     m_selectionIndex++;
-                    UpdateResponses(responses);
+                    UpdateResponses(tree.responseText, responses);
                 }
                 else if (Input.GetButtonDown("Interact"))
                 {

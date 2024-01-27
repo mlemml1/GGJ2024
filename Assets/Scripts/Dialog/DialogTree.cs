@@ -18,5 +18,6 @@ public class DialogTree : ScriptableObject
     public string dialogText;
 
     public SpeechDef vox;
+    public string responseText;
     public List<DialogOption> dialogResponses;
 }

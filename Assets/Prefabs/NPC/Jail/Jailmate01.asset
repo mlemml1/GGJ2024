@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4a75762ec241a47978f56547e826be, type: 3}
+  m_Name: Jailmate01
+  m_EditorClassIdentifier: 
+  dialogText: "You in here for a \u2018subpar jest infraction\u2019 too?\n\nI got
+    one of those back in 20XX. Been in and out of here ever since.\n\nGonna get out
+    of here someday\u2026\n\n\\tHopefully you don\u2019t end up like this guy."
+  vox: {fileID: 11400000, guid: 9485a0882157ad743a3dbe91003aa5cd, type: 2}
+  responseText: 
+  dialogResponses: []
