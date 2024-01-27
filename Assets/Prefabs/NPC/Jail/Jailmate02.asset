@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4a75762ec241a47978f56547e826be, type: 3}
   m_Name: Jailmate02
   m_EditorClassIdentifier: 
+  characterName: Jailmate
   dialogText: "There\u2019s a rat in the corner.\nLook there, see it?\n\n\\tYou search
     for the rat and find nothing. Maybe the poor guy\u2019s seeing things.\n\n\\tHe
     crouches down in the corner of the room, muttering to himself.\n\n\\tThe man

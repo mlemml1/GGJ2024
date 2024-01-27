@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
         // Look for talkative dialog/NPCs.
         var dialog = FindUsable<DialogTrigger>();
-        if (dialog != null)
+        if (dialog != null && dialog.m_tree != null)
         {
             // interact hint.
             if (interact)

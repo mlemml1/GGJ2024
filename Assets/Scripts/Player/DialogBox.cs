@@ -9,6 +9,7 @@ using UnityEngine;
 public class DialogBox : MonoBehaviour
 {
     public GameObject m_box;
+    public TextMeshProUGUI m_characterName;
     public TextMeshProUGUI m_text;
     private AudioSource m_audio;
     private int m_selectionIndex;
@@ -53,7 +54,17 @@ public class DialogBox : MonoBehaviour
             sb.AppendLine(options[i].text);
         }
 
+        SetCharacterName("");
+        m_text.verticalAlignment = VerticalAlignmentOptions.Middle;
         m_text.text = sb.ToString();
+    }
+
+    private void SetCharacterName(string name)
+    {
+        m_characterName.text = name;
+        m_text.rectTransform.offsetMax =
+            new Vector2(m_text.rectTransform.offsetMax.x,
+                        string.IsNullOrEmpty(name) ? -32 : -64);
     }
 
     private bool FindFlag(string flag, ref string str)
@@ -70,6 +81,7 @@ public class DialogBox : MonoBehaviour
 
         m_text.text = "";
         m_text.verticalAlignment = VerticalAlignmentOptions.Top;
+        SetCharacterName("");
         m_selectionIndex = 0;
         Active = true;
 
@@ -96,6 +108,11 @@ public class DialogBox : MonoBehaviour
 
                 // Draw the text.
                 StringBuilder builder = new();
+                if (!isNarration && !string.IsNullOrEmpty(tree.characterName))
+                    SetCharacterName( tree.characterName );
+                else
+                    SetCharacterName( "" );
+
                 for (int i = 0; i < finalStr.Length; i++)
                 {
                     builder.Append(finalStr[i]);
@@ -174,7 +191,8 @@ public class DialogBox : MonoBehaviour
         {
             yield return ShowDialog(tree, target);
         }
-        else if (!string.IsNullOrEmpty( option.message ))
+
+        if (!string.IsNullOrEmpty( option.message ))
         {
             // Action target.
             Debug.Log($"send message {option.message} = {option.messageParam}");

@@ -258,7 +258,7 @@ PrefabInstance:
     - target: {fileID: 6343830239929796005, guid: 33bdceb15e64768408f73bdc32acb1a9,
         type: 3}
       propertyPath: m_nextLevel
-      value: LectureCutscene
+      value: Jailbreak
       objectReference: {fileID: 0}
     - target: {fileID: 8785831429562943378, guid: 33bdceb15e64768408f73bdc32acb1a9,
         type: 3}

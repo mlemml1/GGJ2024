@@ -14,6 +14,8 @@ public struct DialogOption
 [CreateAssetMenu(fileName = "Dialog", menuName = "GGJ/DialogTree", order = 1)]
 public class DialogTree : ScriptableObject
 {
+    public string characterName;
+
     [Multiline]
     public string dialogText;
 

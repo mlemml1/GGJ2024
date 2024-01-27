@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4a75762ec241a47978f56547e826be, type: 3}
   m_Name: Jailmate01
   m_EditorClassIdentifier: 
+  characterName: Jailmate
   dialogText: "You in here for a \u2018subpar jest infraction\u2019 too?\n\nI got
     one of those back in 20XX. Been in and out of here ever since.\n\nGonna get out
     of here someday\u2026\n\n\\tHopefully you don\u2019t end up like this guy."

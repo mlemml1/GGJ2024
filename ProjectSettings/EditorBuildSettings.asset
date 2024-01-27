@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/DormScene.unity
+    guid: 47e5d62bd5252fa428f1e00a1f11398a
+  - enabled: 1
+    path: Assets/Scenes/LectureCutscene.unity
+    guid: 2861cfaecbc3d434ca5e1210c8103c49
+  - enabled: 1
+    path: Assets/Scenes/Jailbreak.unity
+    guid: 661839a9a1237a64d93438c7522c9f87
   m_configObjects: {}
