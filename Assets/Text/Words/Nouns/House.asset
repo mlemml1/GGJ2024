@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: House
   m_EditorClassIdentifier: 
   type: 0
+  category: 12
   word: House

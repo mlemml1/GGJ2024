@@ -19,6 +19,9 @@ public class FadeComponent : MonoBehaviour
     void Start()
     {
         m_mesh = GetComponent<MeshRenderer>();
+        if (m_mesh == null)
+            return;
+
         // m_origMaterial = m_mesh.materials;
 
         m_matColor = new Color[m_mesh.materials.Length];
@@ -28,14 +31,12 @@ public class FadeComponent : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetOpacity(float opacity)
     {
+        if (m_mesh == null)
+            return;
+
+
         var materials = m_mesh.materials;
 
         for (int i = 0; i < m_matColor.Length; i++)

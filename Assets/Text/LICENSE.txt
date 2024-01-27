@@ -1,2 +1,5 @@
 Good Old DOS font created by Daymarius
 https://www.dafont.com/good-old-dos.font
+
+Uses Unity UI Extensions
+https://unity-ui-extensions.github.io/

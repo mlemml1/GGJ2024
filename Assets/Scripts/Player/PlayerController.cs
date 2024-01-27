@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController Current { get; private set; }
 
+    public GameObject m_hud;
+    public BattleHUD m_battleHud;
     public DialogBox m_dialog;
 
     private CharacterController m_controller;
@@ -14,23 +16,28 @@ public class PlayerController : MonoBehaviour
     public Vector3 Velocity => m_velocity;
 
     private Vector3 m_faceDir = Vector3.forward;
+    private bool m_bInBattle;
     public const float maxSpeed = 10.0f;
 
     void Start()
     {
         Current = this;
         m_controller = GetComponent<CharacterController>();
+        m_bInBattle = false;
     }
 
     void Update()
     {
+        if (m_bInBattle)
+            return;
+
         InteractCheck();
     }
 
     void FixedUpdate()
     {
         // Disable all movement while in dialog.
-        if (m_dialog.Active)
+        if (m_dialog.Active || m_bInBattle)
         {
             return;
         }
@@ -132,5 +139,27 @@ public class PlayerController : MonoBehaviour
             return;
 
         StartCoroutine(m_dialog.ShowDialog(tree, target));
+    }
+
+    public void StartBattle(EnemyDef enemy)
+    {
+        if (m_bInBattle)
+            return;
+        m_bInBattle = true;
+
+        m_hud.SetActive(false);
+        m_battleHud.gameObject.SetActive(true);
+
+        m_battleHud.StartBattle(this, enemy);
+    }
+
+    public void EndBattle()
+    {
+        if (!m_bInBattle)
+            return;
+        m_bInBattle = false;
+
+        m_hud.SetActive(true);
+        m_battleHud.gameObject.SetActive(false);
     }
 }

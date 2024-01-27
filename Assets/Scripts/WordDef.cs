@@ -45,8 +45,11 @@ public enum WordCategory
     // Cat 7: Science
     Science             = 60,
 
-    // Cat 8: Memes (high scores)
-    Meme                = 100
+    // Cat 8: Animals
+    Animals             = 70,
+
+    // Cat 9: Memes (high scores)
+    Meme                = 1000
 }
 
 [CreateAssetMenu(fileName = "Word", menuName = "GGJ/WordDef", order = 3)]
