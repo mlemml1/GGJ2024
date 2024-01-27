@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BattleTrigger : MonoBehaviour
@@ -42,6 +43,7 @@ public class BattleTrigger : MonoBehaviour
 
     private IEnumerator DoFizzle()
     {
+        MeshRenderer[] meshes = null;
         if (m_fizzler != null)
         {
             m_sprite.SetActive(false);
@@ -50,12 +52,21 @@ public class BattleTrigger : MonoBehaviour
             fizzler.transform.localPosition = Vector3.zero;
             fizzler.transform.localRotation = Quaternion.Euler(0, 180, 0);
 
-            var meshes = fizzler.GetComponentsInChildren<MeshRenderer>();
+            meshes = fizzler.GetComponentsInChildren<MeshRenderer>();
             foreach ( var mesh in meshes )
                 mesh.material.SetTexture("_BaseMap", m_fizzleTex);
         }
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
+
+        // begin fade.
+        for (int i = 100; i >= 0; --i)
+        {
+            foreach (var mesh in meshes)
+                mesh.material.color = mesh.material.color.WithAlpha((float)i / 100.0f);
+
+            yield return null;
+        }
 
         gameObject.SetActive(false);
     }
