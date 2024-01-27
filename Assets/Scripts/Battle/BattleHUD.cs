@@ -67,12 +67,12 @@ public class BattleHUD : MonoBehaviour
 
     private void Win()
     {
-        BattleOver();
+        BattleOver(true);
     }
 
     private void Lose()
     {
-        BattleOver();
+        BattleOver(false);
     }
 
     private float m_myHealthVel;
@@ -96,14 +96,14 @@ public class BattleHUD : MonoBehaviour
         }
     }
 
-    private void BattleOver()
+    private void BattleOver(bool won)
     {
         if (!m_bInBattle)
             return;
         m_bInBattle = false;
 
         m_battleMusic.Stop();
-        m_player?.EndBattle();
+        m_player?.EndBattle(won);
         m_player = null;
         m_enemy = null;
     }
