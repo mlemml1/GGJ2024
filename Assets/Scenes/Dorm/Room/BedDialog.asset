@@ -10,16 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a4a75762ec241a47978f56547e826be, type: 3}
-  m_Name: DoorOpen
+  m_Name: BedDialog
   m_EditorClassIdentifier: 
-  dialogText: 
+  dialogText: Just an ordinary, state-issued bed.
   vox: {fileID: 0}
-  dialogResponses:
-  - text: Open
-    next: {fileID: 0}
-    message: Toggle
-    messageParam: 
-  - text: Cancel
-    next: {fileID: 0}
-    message: 
-    messageParam: 
+  dialogResponses: []

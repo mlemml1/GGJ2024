@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4a75762ec241a47978f56547e826be, type: 3}
   m_Name: DoorClose
   m_EditorClassIdentifier: 
-  dialogText: Close Door?
+  dialogText: 
   vox: {fileID: 0}
   dialogResponses:
   - text: Close

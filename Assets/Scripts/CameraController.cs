@@ -30,7 +30,7 @@ public class CameraController : MonoBehaviour
         var rot = Quaternion.Euler(m_pitch, 0, 0);
         m_camera.transform.rotation = rot;
 
-        var idealPos = m_player.transform.position + (Vector3.up * 1.0f) + (rot * new Vector3(0, 0, -75));
+        var idealPos = m_player.transform.position + (Vector3.up * 1.0f) + (rot * new Vector3(0, 0, -65));
 
         if (snap)
         {
