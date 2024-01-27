@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: JokeManifest
   m_EditorClassIdentifier: 
   jokes:
+  - {fileID: 11400000, guid: f133ab14ad052ea4cad2c2237fcedd84, type: 2}
+  - {fileID: 11400000, guid: 859c9e6f74a48674db8cdcf2856ad6a4, type: 2}
+  - {fileID: 11400000, guid: cf5054e8517b7fd43b2531f1890d2b29, type: 2}
   - {fileID: 11400000, guid: 6171538fd326bfc4a8c87d6c7dd01651, type: 2}
+  - {fileID: 11400000, guid: b8e18289f5d6edc44ae16369f8876410, type: 2}

@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19166c8c9b60e864abfca4f76e55ed0a, type: 3}
   m_Name: BigGuardDef
   m_EditorClassIdentifier: 
+  controller: {fileID: 9100000, guid: ffe03cf077813464bb882114db3e3e22, type: 2}
+  maxHealth: 25
+  minDamage: 5
+  maxDamage: 10

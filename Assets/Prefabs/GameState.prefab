@@ -45,7 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_jokeManifest: {fileID: 11400000, guid: 9ff56419ea195a34ca9ad7c14dbb657b, type: 2}
-  m_startingWords:
-  - {fileID: 11400000, guid: 07660fa879e8ac4468e790175fa3ba40, type: 2}
-  - {fileID: 11400000, guid: c982438c2405b72419d9516f2014efdf, type: 2}
-  - {fileID: 11400000, guid: 2a8dd9b7cedffd74fbc94203abdb4d04, type: 2}
+  m_wordManifest: {fileID: 11400000, guid: 6ba1aaad6aa54e441a686daa13223231, type: 2}

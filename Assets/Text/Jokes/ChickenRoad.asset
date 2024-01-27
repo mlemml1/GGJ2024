@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e142503876303e94ca6bc5d42f4219e8, type: 3}
   m_Name: ChickenRoad
   m_EditorClassIdentifier: 
-  text: 'why did the (noun) cross the (noun)?
+  text: 'Why did the (noun) cross the (noun)?
 
     I don''t know, why?
 
-    To
-    (verb) to the other (noun)!'
+    To (verb)
+    to the other (noun)!'

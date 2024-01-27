@@ -42,7 +42,7 @@ public class WordCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log($"mouse enter {m_text.text}");
+        // Debug.Log($"mouse enter {m_text.text}");
 
         m_bHasHover = true;
     }

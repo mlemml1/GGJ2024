@@ -5,7 +5,9 @@ using UnityEngine;
 public enum WordType
 {
     Noun,
-    Verb
+    Verb,
+    Adj,
+    Ext
 }
 
 public enum WordCategory
@@ -28,19 +30,22 @@ public enum WordCategory
     // Cat 3: things you'd find in buildings on the street
     Groceries           = 20,
 
+    Events              = 25,
 
     // Cat 4: Technology
     ElectronicDevice    = 30,
     Appliance           = 31,
 
     // Cat 5: People
-    Politics            = 40,
+    Job                 = 40,
     Business            = 41,
     GameCharacter       = 42,
 
     // Cat 6: Entertainment
     Movies              = 50,
     Television          = 51,
+    Music               = 52,
+    Games               = 53,
 
     // Cat 7: Science
     Science             = 60,

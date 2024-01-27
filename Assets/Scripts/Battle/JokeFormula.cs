@@ -9,6 +9,18 @@ public class JokeFormula : MonoBehaviour
     public GameObject m_rowTemplate;
     private JokeDef m_joke;
     private List<JokeLine> m_jokeLines = new();
+    private SaveGroup[] m_saveGroups;
+
+    public JokeFormula()
+    {
+        m_saveGroups = new SaveGroup[9];
+        for (int i = 0; i < m_saveGroups.Length; i++)
+            m_saveGroups[i] = new SaveGroup(i);
+    }
+
+    private void Start()
+    {
+    }
 
     private void Update()
     {
@@ -25,6 +37,8 @@ public class JokeFormula : MonoBehaviour
 
     public void SetJoke(JokeDef joke)
     {
+        Assert.IsNotNull(m_saveGroups[0]);
+
         ClearJoke();
         m_joke = joke;
 
@@ -36,7 +50,7 @@ public class JokeFormula : MonoBehaviour
             var box = Instantiate(m_rowTemplate, transform).GetComponent<JokeLine>();
             m_jokeLines.Add(box);
             box.gameObject.SetActive(false);
-            box.BuildLine(line);
+            box.BuildLine(line, m_saveGroups);
         }
     }
 
@@ -51,7 +65,7 @@ public class JokeFormula : MonoBehaviour
         return false;
     }
 
-    public WordType NextWord()
+    public (WordType, WordCategory?) NextWord()
     {
         foreach (var line in m_jokeLines)
         {
@@ -59,7 +73,7 @@ public class JokeFormula : MonoBehaviour
                 return line.NextWord();
         }
 
-        return (WordType)(-1);
+        return ((WordType)(-1), null);
     }
 
     public void UpdateLineVisibility()
@@ -80,6 +94,21 @@ public class JokeFormula : MonoBehaviour
             if (line.HasWordsUnfilled())
                 break;
         }
+    }
+
+    public bool DeckReady()
+    {
+        foreach (var line in m_jokeLines)
+        {
+            // Wait for the line to finish sliding in.
+            if (!line.m_bVisible)
+                return false;
+
+            // Last unfilled line is shown.
+            if (line.HasWordsUnfilled())
+                break;
+        }
+        return true;
     }
 
     public void FillWord(WordDef word)
