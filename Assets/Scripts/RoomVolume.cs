@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
@@ -30,7 +31,10 @@ public class RoomVolume : MonoBehaviour
     {
         foreach (var obj in this.GetComponentsInChildren<MeshRenderer>())
         {
-            obj.enabled = opacity > 0.5f;
+            // This is hacky. Too bad!
+            var fade = obj.GetOrAddComponent<FadeComponent>();
+            fade.SetOpacity( opacity );
+            //obj.enabled = opacity > 0.1f;
         }
     }
 

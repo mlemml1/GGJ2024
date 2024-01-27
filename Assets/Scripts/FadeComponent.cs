@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -10,19 +11,20 @@ using UnityEngine;
 public class FadeComponent : MonoBehaviour
 {
     private MeshRenderer m_mesh;
-    private Material[] m_origMaterial;
-    private Material[] m_cloneMaterial;
+    private Color[] m_matColor;
+
+    //private Material[] m_cloneMaterial;
 
     // Start is called before the first frame update
     void Start()
     {
         m_mesh = GetComponent<MeshRenderer>();
-        m_origMaterial = m_mesh.materials;
+        // m_origMaterial = m_mesh.materials;
 
-        m_cloneMaterial = new Material[m_origMaterial.Length];
-        for (int i = 0; i < m_origMaterial.Length; i++)
+        m_matColor = new Color[m_mesh.materials.Length];
+        for (int i = 0; i < m_mesh.materials.Length; i++)
         {
-
+            m_matColor[i] = m_mesh.materials[i].color;
         }
     }
 
@@ -30,5 +32,15 @@ public class FadeComponent : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetOpacity(float opacity)
+    {
+        var materials = m_mesh.materials;
+
+        for (int i = 0; i < m_matColor.Length; i++)
+        {
+            materials[i].color = m_matColor[i] * opacity;
+        }
     }
 }
