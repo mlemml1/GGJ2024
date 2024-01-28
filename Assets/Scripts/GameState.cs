@@ -48,10 +48,15 @@ public class GameState : MonoBehaviour
         m_exts = new(exts);
 
         // Add 4 of each to the starting deck.
-        m_words.AddRange(ChooseWords(m_verbs, 49));
-        m_words.AddRange(ChooseWords(m_nouns, 49));
-        m_words.AddRange(ChooseWords(m_adjs, 49));
-        m_words.AddRange(ChooseWords(m_exts, 49));
+        m_words.AddRange(m_verbs);
+        m_words.AddRange(m_nouns);
+        m_words.AddRange(m_adjs);
+        m_words.AddRange(m_exts);
+
+        //m_words.AddRange(ChooseWords(m_verbs, 49));
+        //m_words.AddRange(ChooseWords(m_nouns, 49));
+        //m_words.AddRange(ChooseWords(m_adjs, 49));
+        //m_words.AddRange(ChooseWords(m_exts, 49));
     }
 
     public List<WordDef> ChooseWords(HashSet<WordDef> list, int nWords)
