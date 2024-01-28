@@ -52,6 +52,7 @@ public class JailDoor : MonoBehaviour
 
     public void GuardLaugh()
     {
+        m_trigger.m_tree = null;
         StartCoroutine(GuardLaughRoutine());
     }
 

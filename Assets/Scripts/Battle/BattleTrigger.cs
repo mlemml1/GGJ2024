@@ -59,11 +59,17 @@ public class BattleTrigger : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
+        const int numFrames = 300;
+
         // begin fade.
-        for (int i = 100; i >= 0; --i)
+        for (int i = numFrames; i >= 0; --i)
         {
             foreach (var mesh in meshes)
-                mesh.material.color = mesh.material.color.WithAlpha((float)i / 100.0f);
+            {
+                var clr = mesh.material.color;
+                clr.a = ((float)i / (float)numFrames);
+                mesh.material.color = clr;
+            }
 
             yield return null;
         }
