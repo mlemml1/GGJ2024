@@ -52,7 +52,7 @@ public class DoorController : MonoBehaviour
 
         var axis = m_bOpenUp ? new Vector3(0, 0, 90) : new Vector3(0, 90, 0);
 
-        if (side)
+        if (side && !m_bOpenUp)
         {
             m_targetRot = m_closedRot + axis;
         }

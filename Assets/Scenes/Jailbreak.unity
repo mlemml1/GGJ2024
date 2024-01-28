@@ -586,6 +586,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: JailbreakTransitionDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 6235102329782210846, guid: 83c5a7d4bd89782439da69e148c32462,
+        type: 3}
+      propertyPath: m_nextLevel
+      value: JailFloor1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
