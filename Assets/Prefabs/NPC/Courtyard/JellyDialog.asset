@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4a75762ec241a47978f56547e826be, type: 3}
+  m_Name: JellyDialog
+  m_EditorClassIdentifier: 
+  characterName: Student
+  dialogText: "Why did the scarecrow win an award? Because he was outstanding in
+    his field!\n\nYou know, like a field? Cause it has two meanings.\n\nCept, there\u2019s
+    no scarecrows out here. And even if there were, they wouldn\u2019t be fooling
+    anybody.\n\nShoot, I just explained the joke, now it ain\u2019t funny\u2026"
+  vox: {fileID: 11400000, guid: 0421f8357633c8f47bb4f73785c8d4b8, type: 2}
+  responseText: 
+  dialogResponses: []

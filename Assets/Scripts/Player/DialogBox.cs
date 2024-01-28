@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
@@ -74,7 +75,7 @@ public class DialogBox : MonoBehaviour
         return hasAny;
     }
 
-    public IEnumerator ShowDialog(DialogTree tree, GameObject target)
+    public IEnumerator ShowDialog(DialogTree tree, GameObject target, Action callback = null)
     {
         if (Active)
             yield break;
@@ -121,7 +122,7 @@ public class DialogBox : MonoBehaviour
                     // play clip.
                     if (!isNarration && tree.vox != null && (Time.time - lastSpeechTime) > speechRate)
                     {
-                        m_audio.pitch = Random.Range(1.0f - tree.vox.warbleScale, 1.0f + tree.vox.warbleScale);
+                        m_audio.pitch = UnityEngine.Random.Range(1.0f - tree.vox.warbleScale, 1.0f + tree.vox.warbleScale);
                         m_audio.PlayOneShot(tree.vox.voxSfx);
                         lastSpeechTime = Time.time;
                     }
@@ -183,6 +184,9 @@ public class DialogBox : MonoBehaviour
         // Chain the next option.
         if (selectedOption is DialogOption option)
             yield return SelectOption(option, target);
+
+        if (callback != null)
+            callback();
     }
 
     private IEnumerator SelectOption( DialogOption option, GameObject target )

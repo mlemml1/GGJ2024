@@ -85,7 +85,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.8, y: 2.04, z: 3.71}
+  m_Size: {x: 10.54, y: 2.04, z: 3.71}
   m_Center: {x: 0, y: 1.01, z: 0}
 --- !u!114 &2945353140333388806
 MonoBehaviour:
@@ -99,7 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c6d51e161e1d644b208f2fae5e96c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_tree: {fileID: 11400000, guid: 551fea807d9807b43b544ce2a9ad8039, type: 2}
   m_enemy: {fileID: 11400000, guid: b542c0b187f9f69408af85759425875d, type: 2}
+  m_sprite: {fileID: 8818347220006519138}
+  m_fizzler: {fileID: 2677364457733114485, guid: 9b17836669e5b0645a8815030901a1e6,
+    type: 3}
+  m_fizzleTex: {fileID: 2800000, guid: a466f38611eec3d4fb9938c81f9c9ffc, type: 3}
 --- !u!1 &8818347220006519138
 GameObject:
   m_ObjectHideFlags: 0

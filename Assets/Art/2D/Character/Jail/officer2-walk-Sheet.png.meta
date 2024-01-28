@@ -113,10 +113,10 @@ TextureImporter:
       name: officer2-walk-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 51.333332
-        height: 101
+        x: 8
+        y: 8
+        width: 38
+        height: 91
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,10 +134,10 @@ TextureImporter:
       name: officer2-walk-Sheet_1
       rect:
         serializedVersion: 2
-        x: 51
-        y: 0
-        width: 51.333332
-        height: 101
+        x: 54
+        y: 8
+        width: 38
+        height: 91
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: officer2-walk-Sheet_2
       rect:
         serializedVersion: 2
-        x: 102
-        y: 0
-        width: 51.333332
-        height: 101
+        x: 100
+        y: 8
+        width: 38
+        height: 91
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

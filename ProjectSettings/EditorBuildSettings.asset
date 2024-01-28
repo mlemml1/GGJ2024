@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DormScene.unity
     guid: 47e5d62bd5252fa428f1e00a1f11398a
   - enabled: 1
+    path: Assets/Scenes/Courtyard.unity
+    guid: 041f1183d1af1074e958d80bfede2a3e
+  - enabled: 1
     path: Assets/Scenes/LectureCutscene.unity
     guid: 2861cfaecbc3d434ca5e1210c8103c49
   - enabled: 1

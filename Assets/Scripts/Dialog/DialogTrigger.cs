@@ -6,14 +6,4 @@ public class DialogTrigger : MonoBehaviour
 {
     public DialogTree m_tree;
     public GameObject m_target;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

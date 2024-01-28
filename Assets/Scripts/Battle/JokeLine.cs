@@ -30,6 +30,7 @@ public class JokeLine : MonoBehaviour
     private string text;
     private LinkedList<(WordType, WordCategory?, TextMeshProUGUI, SaveGroup)> m_remainingWords = new();
     private List<TextMeshProUGUI> m_wordBoxes = new();
+    private bool m_bIsReply = false;
 
     public IEnumerator Display()
     {
@@ -39,16 +40,33 @@ public class JokeLine : MonoBehaviour
         var group = GetComponentInParent<VerticalLayoutGroup>();
         LayoutRebuilder.MarkLayoutForRebuild(group.transform as RectTransform);
 
+        yield return null;
+
         var image = GetComponent<Image>();
+        var imgCol = image.color;
+        if (m_bIsReply)
+        {
+            imgCol.r *= 0.75f;
+            imgCol.g *= 0.75f;
+            imgCol.b *= 0.75f;
+        }
+
         for (int i = 0; i <= 100; i++)
         {
             // Update transparency.
             float opacity = (float)i / 100.0f;
 
-            image.color = image.color.WithAlpha(opacity);
+            
+            imgCol.a = opacity;
+            image.color = imgCol;
 
             foreach (var word in m_wordBoxes)
-                word.color = word.color.WithAlpha(opacity);
+            {
+                //word.color = word.color.WithAlpha(opacity);
+                var clr = word.color;
+                clr.a = opacity;
+                word.color = clr;
+            }
 
             // transform.position = new Vector3(i, transform.position.y, transform.position.z);
             yield return null;
@@ -65,6 +83,8 @@ public class JokeLine : MonoBehaviour
         // Split into words.
         var re = new Regex(@"(?:\([^)]+\)|[\w']+|[^\s])");
 
+        m_bIsReply = true;
+
         // Add a textbox for each word.
         var matches = re.Matches(line);
         foreach (var word in matches)
@@ -80,6 +100,8 @@ public class JokeLine : MonoBehaviour
         // Setup text.
         if (text.StartsWith("(noun"))
         {
+            m_bIsReply = false;
+
             WordCategory? requireCat = null;
             SaveGroup saveGroup = null;
             int tagIdx = text.IndexOf(":");
@@ -116,16 +138,19 @@ public class JokeLine : MonoBehaviour
         }
         else if (text == "(verb)")
         {
+            m_bIsReply = false;
             box.text = "____";
             m_remainingWords.AddLast((WordType.Verb, null, box, null));
         }
         else if (text == "(adj)")
         {
+            m_bIsReply = false;
             box.text = "____";
             m_remainingWords.AddLast((WordType.Adj, null, box, null));
         }
         else if (text == "(ext)")
         {
+            m_bIsReply = false;
             box.text = "____";
             m_remainingWords.AddLast((WordType.Ext, null, box, null));
         }

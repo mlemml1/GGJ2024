@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BigGuardDef
   m_EditorClassIdentifier: 
   controller: {fileID: 9100000, guid: ffe03cf077813464bb882114db3e3e22, type: 2}
-  maxHealth: 25
+  maxHealth: 50
   minDamage: 5
   maxDamage: 10

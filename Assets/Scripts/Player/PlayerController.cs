@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -115,7 +116,7 @@ public class PlayerController : MonoBehaviour
     void InteractCheck()
     {
         bool interact = Input.GetButtonDown("Interact");
-        
+
         // Look for grabbable items.
 
         // Look for something interactable.
@@ -133,19 +134,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void StartDialog(DialogTree tree, GameObject target)
+    public void StartDialog(DialogTree tree, GameObject target, Action callback = null)
     {
         if (m_dialog.Active)
             return;
 
-        StartCoroutine(m_dialog.ShowDialog(tree, target));
+        StartCoroutine(m_dialog.ShowDialog(tree, target, callback));
     }
 
-    public void StartBattle(EnemyDef enemy)
+    private Action<bool> m_battleCallback;
+    public void StartBattle(EnemyDef enemy, Action<bool> callback = null)
     {
         if (m_bInBattle)
             return;
         m_bInBattle = true;
+
+        m_battleCallback = callback;
 
         m_hud.SetActive(false);
         m_battleHud.gameObject.SetActive(true);
@@ -153,11 +157,14 @@ public class PlayerController : MonoBehaviour
         m_battleHud.StartBattle(this, enemy);
     }
 
-    public void EndBattle()
+    public void EndBattle(bool won)
     {
         if (!m_bInBattle)
             return;
         m_bInBattle = false;
+
+        if (m_battleCallback != null)
+            m_battleCallback(won);
 
         m_hud.SetActive(true);
         m_battleHud.gameObject.SetActive(false);
