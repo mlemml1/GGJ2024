@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 822efd9e791f7724bba7bb2106a04223
+  - enabled: 1
     path: Assets/Scenes/DormScene.unity
     guid: 47e5d62bd5252fa428f1e00a1f11398a
   - enabled: 1
