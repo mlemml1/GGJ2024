@@ -1,6 +1,9 @@
 Good Old DOS font created by Daymarius
 https://www.dafont.com/good-old-dos.font
 
+Ambient sound effects courtesy Adobe Audition royalty-free sfx:
+https://www.adobe.com/products/audition/offers/AdobeAuditionDLCSFX.html
+
 Uses Unity UI Extensions
 https://unity-ui-extensions.github.io/
 

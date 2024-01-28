@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f867ed681686db0468da311f274c4e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_tree: {fileID: 11400000, guid: e5ae0d66f8dbff64a9851fbae106b7f8, type: 2}
+  m_tree: {fileID: 11400000, guid: cc627cbcea4459a439893a0d0b09ca0f, type: 2}
   m_target: {fileID: 0}
 --- !u!1 &8818347220006519138
 GameObject:
@@ -128,8 +128,8 @@ Transform:
   m_GameObject: {fileID: 8818347220006519138}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 1.7, z: 0}
-  m_LocalScale: {x: 2.0280929, y: 2.0096529, z: 0.78267205}
+  m_LocalPosition: {x: 0.01, y: 1.11, z: 0}
+  m_LocalScale: {x: 1.2967219, y: 1.2849318, z: 0.50042486}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2060949504153444564}

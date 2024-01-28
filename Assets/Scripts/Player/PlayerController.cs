@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
@@ -162,6 +163,12 @@ public class PlayerController : MonoBehaviour
         if (!m_bInBattle)
             return;
         m_bInBattle = false;
+
+        if (!won)
+        {
+            SceneManager.LoadScene("GameOver");
+            return;
+        }
 
         if (m_battleCallback != null)
             m_battleCallback(won);

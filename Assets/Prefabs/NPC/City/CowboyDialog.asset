@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: CowboyDialog
   m_EditorClassIdentifier: 
   characterName: ???
-  dialogText: 
-  vox: {fileID: 0}
+  dialogText: "Ay\u2019, you. Want some Bliss?\n\n\\t...\n\nBrand new formula just
+    cooked up in my lab...\n\nWe just developed it, based on that leaked SmileCo.
+    stuff.\n\n\\tYou shake your head and leave the nice man alone."
+  vox: {fileID: 11400000, guid: 0421f8357633c8f47bb4f73785c8d4b8, type: 2}
   responseText: 
   dialogResponses: []

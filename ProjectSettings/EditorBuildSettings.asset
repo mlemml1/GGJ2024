@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/JailFloor1.unity
     guid: a358ad9f3bca6554b8edecc094d50fa8
+  - enabled: 1
+    path: Assets/Scenes/Sewers.unity
+    guid: 9f527bb45a234ce46bd98a10401f7f7e
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 23c9397be5fef8944ba4ae48d0644f61
   m_configObjects: {}
