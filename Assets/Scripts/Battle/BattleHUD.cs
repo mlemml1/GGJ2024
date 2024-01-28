@@ -213,8 +213,9 @@ public class BattleHUD : MonoBehaviour
         m_bDoingDamage = true;
 
         m_playerAnim.SetTrigger("attack");
-
         yield return new WaitForSeconds(1);
+        m_enemyAnim.SetTrigger("damaged");
+
         m_enemyHealth -= m_damageScore;
         m_damageScore = 0;
 
@@ -239,6 +240,7 @@ public class BattleHUD : MonoBehaviour
 
         m_enemyAnim.SetTrigger("attack");
         yield return new WaitForSeconds(1);
+        m_playerAnim.SetTrigger("damaged");
 
         int damage = Random.Range(m_enemy.minDamage, m_enemy.maxDamage);
         m_myHealth -= damage;
