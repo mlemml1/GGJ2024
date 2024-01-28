@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19166c8c9b60e864abfca4f76e55ed0a, type: 3}
-  m_Name: GooberDef
+  m_Script: {fileID: 11500000, guid: 1a4a75762ec241a47978f56547e826be, type: 3}
+  m_Name: TrashDialog
   m_EditorClassIdentifier: 
-  controller: {fileID: 9100000, guid: c1c2fb0e1bccf1c4d85919dadbeca9cb, type: 2}
-  maxHealth: 150
-  minDamage: 10
-  maxDamage: 18
+  characterName: Trash Guy
+  dialogText: I'm happy here.
+  vox: {fileID: 11400000, guid: 9485a0882157ad743a3dbe91003aa5cd, type: 2}
+  responseText: 
+  dialogResponses: []

@@ -3243,7 +3243,7 @@ MonoBehaviour:
   audioSource: {fileID: 432910436}
   minDist: 44
   maxDist: 50
-  volumeScale: 0.4
+  volumeScale: 0.6
 --- !u!82 &432910436
 AudioSource:
   m_ObjectHideFlags: 0

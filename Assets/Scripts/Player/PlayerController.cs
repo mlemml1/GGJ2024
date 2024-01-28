@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 m_faceDir = Vector3.forward;
     private bool m_bInBattle;
-    public const float maxSpeed = 10.0f;
+    public const float maxSpeed = 7.5f;
 
     void Start()
     {
