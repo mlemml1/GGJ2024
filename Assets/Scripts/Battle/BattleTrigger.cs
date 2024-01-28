@@ -11,6 +11,8 @@ public class BattleTrigger : MonoBehaviour
     public GameObject m_sprite;
     public GameObject m_fizzler;
     public Texture m_fizzleTex;
+    public GameObject m_next;
+    public string m_nextMessage;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -37,6 +39,11 @@ public class BattleTrigger : MonoBehaviour
 
     public void BattleDone(bool won)
     {
+        if (m_next != null && won)
+        {
+            m_next.SendMessage(m_nextMessage);
+        }
+
         if (won)
             StartCoroutine(DoFizzle());
     }

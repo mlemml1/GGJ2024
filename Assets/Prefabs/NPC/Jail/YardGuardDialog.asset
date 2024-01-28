@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4a75762ec241a47978f56547e826be, type: 3}
+  m_Name: YardGuardDialog
+  m_EditorClassIdentifier: 
+  characterName: Prison Guards
+  dialogText: "Look man, I told you. The lemon lime flavor of SmileCo. GrinFizz\u2122
+    is the best one.\n\nYou\u2019re full of crap. I mean, have you ever had the watermelon
+    wave flavor?\n\nTell me you\u2019re not just an entry-level GrinFizz fan\u2026\n\n...\n\nLook,
+    there\u2019s a vending machine over there, I\u2019ll get you one. You really
+    gotta venture out more than just the lemon lime\u2026\n\n\\tYou lose interest
+    in their boring conversation."
+  vox: {fileID: 11400000, guid: b4ac82f6e07cfbd4baeae1268500db39, type: 2}
+  responseText: 
+  dialogResponses: []

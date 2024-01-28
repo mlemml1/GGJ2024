@@ -509,7 +509,7 @@ AudioSource:
   m_GameObject: {fileID: 4173685415802938310}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -120439576520825613, guid: 4629e530f2c5f5e44a33b56f13ea3a7b,
+  OutputAudioMixerGroup: {fileID: -2327600364945397539, guid: 4629e530f2c5f5e44a33b56f13ea3a7b,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 9dd865e7a85bfcd41a74a5125c1a569d, type: 3}
   m_PlayOnAwake: 0
@@ -747,8 +747,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6665625, y: 0}
   m_AnchorMax: {x: 1, y: 0.7726296}
-  m_AnchoredPosition: {x: 45.058838, y: -36.736572}
-  m_SizeDelta: {x: 0, y: -73.473206}
+  m_AnchoredPosition: {x: 45.058838, y: 46.25702}
+  m_SizeDelta: {x: 0, y: -239.4604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6761529869043099816
 CanvasRenderer:
@@ -822,7 +822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AspectMode: 2
-  m_AspectRatio: 0.85840243
+  m_AspectRatio: 1
 --- !u!1 &7823622684131294104
 GameObject:
   m_ObjectHideFlags: 0

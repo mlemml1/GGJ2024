@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d3f6ffbff3440484db58ae9af4dd723d
+guid: 6db18f9ed849ad743be627008f1c777f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,18 +108,62 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: idlerat_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 8
+        width: 77
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ca1d5cc18e3784cbc72f6450df5da8
+      internalID: 813475070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idlerat_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 8
+        width: 77
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f85b94ed2e1a0e4d9d0beeba10ce6a5
+      internalID: 1337690471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: d53a37d3fcf711a498d4bc877eefb248
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      idlerat_0: 813475070
+      idlerat_1: 1337690471
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

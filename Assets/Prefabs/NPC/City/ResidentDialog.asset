@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4a75762ec241a47978f56547e826be, type: 3}
+  m_Name: ResidentDialog
+  m_EditorClassIdentifier: 
+  characterName: 
+  dialogText: 'Hey, you got something on your shirt.
+
+
+    \tAs you look down, the
+    man hits your chin with his finger.
+
+
+    Gotcha.'
+  vox: {fileID: 11400000, guid: d7e26fdba371107468fbefee07b9340b, type: 2}
+  responseText: 
+  dialogResponses: []

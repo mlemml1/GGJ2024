@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d3f6ffbff3440484db58ae9af4dd723d
+guid: 8fb76732aea3bf04b85d952258d4c0e2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,18 +108,62 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: rat_damaged_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 76
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d430a1a9d8e28054e9d6eefa9f77bc35
+      internalID: -803672965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rat_damaged_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 76
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba466ed9fb87aa4380e73dd53a8d5dd
+      internalID: -1199488386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: d9ad38f651bef3f48b15a3271456c605
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rat_damaged_0: -803672965
+      rat_damaged_1: -1199488386
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7608283668123690046}
   - component: {fileID: 1522505875482159548}
   m_Layer: 0
-  m_Name: DoorGuard
+  m_Name: GateGuard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,8 +53,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 3.44, z: 2}
-  m_Center: {x: 0, y: 1.79, z: 0}
+  m_Size: {x: 1.634628, y: 3.44, z: 2.8413525}
+  m_Center: {x: 0.18268588, y: 1.79, z: 0.42067635}
 --- !u!114 &1522505875482159548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f867ed681686db0468da311f274c4e87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_tree: {fileID: 11400000, guid: 9fd829d54925cd1408c940aeb4cd4152, type: 2}
+  m_tree: {fileID: 11400000, guid: 30d8e4bd19bbfa8428464c2e21a6adff, type: 2}
   m_target: {fileID: 0}
 --- !u!1 &8818347220006519138
 GameObject:
@@ -98,7 +98,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.01, y: 1.59, z: 0}
-  m_LocalScale: {x: 2.9064724, y: 3.3120527, z: 1.2899}
+  m_LocalScale: {x: -2.906472, y: 3.3120527, z: 1.2899}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2060949504153444564}
