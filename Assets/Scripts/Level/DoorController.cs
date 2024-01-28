@@ -10,6 +10,7 @@ public class DoorController : MonoBehaviour
     private Vector3 m_doorRot;
     private Vector3 m_targetRot;
 
+    public bool m_bOpenUp;
     public DialogTree m_openTree;
     public DialogTree m_closeTree;
     public DialogTrigger m_dialogTrigger;
@@ -48,14 +49,16 @@ public class DoorController : MonoBehaviour
             return;
 
         bool side = m_doorPlane.GetSide(player.transform.position);
-        
+
+        var axis = m_bOpenUp ? new Vector3(0, 0, 90) : new Vector3(0, 90, 0);
+
         if (side)
         {
-            m_targetRot = m_closedRot + new Vector3(0, 90, 0);
+            m_targetRot = m_closedRot + axis;
         }
         else
         {
-            m_targetRot = m_closedRot - new Vector3(0, 90, 0);
+            m_targetRot = m_closedRot - axis;
         }
         m_dialogTrigger.m_tree = m_closeTree;
     }
